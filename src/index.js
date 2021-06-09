@@ -92,13 +92,51 @@
 /**
  * デフォルト値、引数など
  */
-const sayHello = (name) => {
-  if (name === "takumi") {
-    return console.log(`こんにちは!${name}さん!`);
-  } else {
-    return console.log("error");
-  }
-};
-sayHello("akiba");
-const sayHello1 = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
-sayHello1("");
+// const sayHello = (name) => {
+//   if (name === "takumi") {
+//     return console.log(`こんにちは!${name}さん!`);
+//   } else {
+//     return console.log("error");
+//   }
+// };
+// sayHello("akiba");
+// const sayHello1 = (name = "ゲスト") => console.log(`こんにちは！${name}さん！`);
+// sayHello1("");
+
+/**
+ * スプレッド構文
+ */
+
+//  配列の展開
+const arr1 = [1, 2];
+console.log(arr1);
+// 配列の中身を順番に展開して処理してくれる
+console.log(...arr1);
+
+const sumFunc = (num1, num2) => console.log(num1 + num2);
+sumFunc(arr1[0], arr1[1]);
+sumFunc(3, 3);
+sumFunc(...arr1);
+
+// １つにまとめる
+const arr2 = [1, 2, 3, 4, 5];
+const [num1, num2, ...arr] = arr2;
+console.log(arr2);
+console.log(arr);
+
+// 配列のコピー、結合
+const arr4 = [10, 20];
+const arr5 = [30, 40];
+
+const arr6 = [...arr4];
+console.log(arr6);
+
+const arr7 = [arr4, arr5];
+console.log(...arr7);
+
+// コピー 元の配列にも不具合が起きてしまう。
+// arr8の配列の中の数値を変更したら、arr4の配列の中の数値まで変更してしまう。
+const arr8 = arr4;
+arr8[0] = 1000;
+console.log(arr8);
+console.log(arr4);
