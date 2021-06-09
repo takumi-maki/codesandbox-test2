@@ -145,37 +145,61 @@
  * map や filter　を使った配列の処理
  */
 
-const nameArr = ["秋庭", "秋葉", "秋馬"];
-// for文
-for (let index = 0; index < nameArr.length; index++) {
-  console.log(`${index + 1}番目は${nameArr[index]}です。`);
-}
+// const nameArr = ["秋庭", "秋葉", "秋馬"];
+// // for文
+// for (let index = 0; index < nameArr.length; index++) {
+//   console.log(`${index + 1}番目は${nameArr[index]}です。`);
+// }
 
-// mapを使った繰り返し構文
-const nameArr2 = nameArr.map((name) => {
-  return name;
-});
-console.log(nameArr2);
+// // mapを使った繰り返し構文
+// const nameArr2 = nameArr.map((name) => {
+//   return name;
+// });
+// console.log(nameArr2);
 
-// 名前の順番にコンソールに出力される例
-nameArr.map((name) => console.log(name));
+// // 名前の順番にコンソールに出力される例
+// nameArr.map((name) => console.log(name));
 
-// filter　　　　　returnの後に条件式を記入
-const numArr = [1, 2, 3, 4, 5];
-const newNumArr = numArr.filter((num) => {
-  return num % 1 === 0;
-});
-console.log(newNumArr);
+// // filter　　　　　returnの後に条件式を記入
+// const numArr = [1, 2, 3, 4, 5];
+// const newNumArr = numArr.filter((num) => {
+//   return num % 1 === 0;
+// });
+// console.log(newNumArr);
 
-// mapでインデックスが必要な場合。
-nameArr.filter((name, index) => console.log(`${index + 1}番目は${name}です。`));
+// // mapでインデックスが必要な場合。
+// nameArr.filter((name, index) => console.log(`${index + 1}番目は${name}です。`));
 
-// 自分以外はさん付けプログラム
-const nameNewArr = nameArr.map((name) => {
-  if (name === "秋葉") {
-    return name;
-  } else {
-    return `${name}さん`;
-  }
-});
-console.log(nameNewArr);
+// // 自分以外はさん付けプログラム
+// const nameNewArr = nameArr.map((name) => {
+//   if (name === "秋葉") {
+//     return name;
+//   } else {
+//     return `${name}さん`;
+//   }
+// });
+// console.log(nameNewArr);
+
+/**
+ * 三項演算子　 使いすぎると可読性が悪くなる
+ * ある条件 ? 条件がtrueの時: 条件がfalseの時
+ */
+const val1 = 1 < 0 ? "trueです" : "falseです";
+console.log(val1);
+
+// toLocaleString()でカンマ区切りにする
+const num = 1300;
+console.log(num.toLocaleString());
+
+// 文字列の場合は注意喚起をする
+const formattedNum =
+  typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
+console.log(formattedNum);
+
+// ある一定値より数値がそれより超えているかのプログラム
+const checkSum = (num1, num2) => {
+  return num1 + num2 > 100
+    ? `合計が${num1 + num2}だから100を超えている`
+    : `合計が${num1 + num2}だから100を超えていない`;
+};
+console.log(checkSum(134, 33.222));
