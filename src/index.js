@@ -184,22 +184,45 @@
  * 三項演算子　 使いすぎると可読性が悪くなる
  * ある条件 ? 条件がtrueの時: 条件がfalseの時
  */
-const val1 = 1 < 0 ? "trueです" : "falseです";
-console.log(val1);
+// const val1 = 1 < 0 ? "trueです" : "falseです";
+// console.log(val1);
 
-// toLocaleString()でカンマ区切りにする
-const num = 1300;
-console.log(num.toLocaleString());
+// // toLocaleString()でカンマ区切りにする
+// const num = 1300;
+// console.log(num.toLocaleString());
 
-// 文字列の場合は注意喚起をする
-const formattedNum =
-  typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
-console.log(formattedNum);
+// // 文字列の場合は注意喚起をする
+// const formattedNum =
+//   typeof num === "number" ? num.toLocaleString() : "数値を入力してください。";
+// console.log(formattedNum);
 
-// ある一定値より数値がそれより超えているかのプログラム
-const checkSum = (num1, num2) => {
-  return num1 + num2 > 100
-    ? `合計が${num1 + num2}だから100を超えている`
-    : `合計が${num1 + num2}だから100を超えていない`;
-};
-console.log(checkSum(134, 33.222));
+// // ある一定値より数値がそれより超えているかのプログラム
+// const checkSum = (num1, num2) => {
+//   return num1 + num2 > 100
+//     ? `合計が${num1 + num2}だから100を超えている`
+//     : `合計が${num1 + num2}だから100を超えていない`;
+// };
+// console.log(checkSum(134, 33.222));
+
+/**
+ * 論理演算子の本当の意味を知ろう || と &&
+ */
+//
+const flag1 = true;
+const flag2 = true;
+if (flag1 || flag2) {
+  console.log("1か2はtrueになる");
+}
+if (flag1 && flag2) {
+  console.log("1も2もtrueになる");
+}
+
+//  ||パイプラインは　左側がfalseなら右を返す。
+const num = 100;
+const fee = num || "金額未設定";
+console.log(fee);
+
+// &&　は左側がtrueなら右側を返す
+const num2 = null;
+const fee2 = num2 && "何か設定されました。";
+console.log(fee2);
